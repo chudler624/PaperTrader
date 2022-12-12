@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StockApp.Data.ApiLogic;
 using StockApp.Models;
 using System.Diagnostics;
 
@@ -26,6 +27,15 @@ namespace StockApp.Controllers
         public IActionResult SearchStock()
         {
             return View();
+        }
+
+        public IActionResult News(string stock)
+        {
+            var newsApi = new NewsApi();
+            var newsModel = newsApi.GetStockNews(stock);
+
+
+            return View(newsModel);
         }
 
         public IActionResult TipNTutorials()

@@ -16,3 +16,72 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*news page*/
+
+h1{
+    font-family:'Times New Roman';
+    font-size:30px;
+    text-align:left;
+    
+}
+
+#title{
+    color:black;
+    font-family:'Times New Roman';
+    text-decoration:none;
+    text-align:left;
+    font-size:20px;
+    font-weight:700;
+    vertical-align:middle
+    
+}
+
+.block{
+    text-align:center;
+}
+
+.table{
+    width: 75%;
+}
+
+.pagealign{
+    text-align:center;
+}
+
+th{
+    width: 50%;
+    vertical-align:middle;
+    text-align:left;
+}
+
+td{
+    width: 25%;
+    text-align: right;
+}
+
+#author{
+    text-align:center;
+}
+
+#banner{
+    text-align:right;
+    width:50%;
+    height:20%;
+}
+
+#pic{
+    text-align:right;
+    width:250px;
+    height:150px;
+}
+
+#story{
+    font-weight:900;
+}
+
+#summary{
+    font-size: 12px;
+    font-weight:500;
+}
+
