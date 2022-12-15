@@ -37,27 +37,26 @@ h1{
     
 }
 
-.block{
-    text-align:center;
-}
 
-.table{
+.newsTable{
     width: 75%;
+    margin: auto;
+    border-bottom: 1px solid black;
+    border-color:black;
 }
 
-.pagealign{
-    text-align:center;
-}
 
-th{
+
+.newsTable th{
     width: 50%;
     vertical-align:middle;
     text-align:left;
 }
 
-td{
+.newsTable td{
     width: 25%;
     text-align: right;
+    vertical-align:middle;
 }
 
 #author{
@@ -68,12 +67,14 @@ td{
     text-align:right;
     width:50%;
     height:20%;
+    vertical-align:middle;
 }
 
 #pic{
     text-align:right;
     width:250px;
     height:150px;
+    vertical-align:middle;
 }
 
 #story{
@@ -85,3 +86,55 @@ td{
     font-weight:500;
 }
 
+/*Stock Display Page*/
+#symbol{
+    text-align: center;
+}
+
+#name{
+    text-align:center;
+}
+
+.description{
+    font-size:12px;
+    font-family:'Times New Roman';
+    font-weight:500;
+
+}
+
+.statsTable{
+    margin:auto;
+   width: 100%
+
+}
+
+.statsTable th{
+    width:25%;
+    border-bottom: 1px solid black;
+    text-align: left;
+    
+}
+
+.statsTable td{
+    width: 25%;
+    border-bottom: 1px solid black;
+    text-align:right;
+}
+
+.infoTable{
+    width: 60%;
+    margin:auto;
+
+}
+
+.infoTable th{
+    width: 50%;
+    text-align:left;
+    border-bottom:1px solid black;
+}
+
+.infoTable td {
+    width: 50%;
+    text-align: left;
+    border-bottom: 1px solid black;
+}

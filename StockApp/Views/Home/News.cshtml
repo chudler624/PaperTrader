@@ -9,15 +9,16 @@
 
 
 
-<div class="block"> 
+
     @foreach(var item in Model)
     {
-        <div class="pagealign"><table class="table">
-                    <th scope="row"><a id="title" href="@item.Url">@item.Title</a></th>
+        <br/>
+        <table class="newsTable">
+            <tr>
+                    <th><a id="title" href="@item.Url">@item.Title</a></th>
                     <td><div id="banner"><img id="pic" src="@item.Banner_image" /></div></td>
-                </table>
-        </div> 
+            </tr>
+        <br/>
+        </table>
+        
     }
-</div>
-
-    

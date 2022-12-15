@@ -29,6 +29,15 @@ namespace StockApp.Controllers
             return View();
         }
 
+        public IActionResult DisplayStock(string stock)
+        {
+            var stockOverviewDisplayApi = new StockOverviewDisplayApi();
+            var stockDisplayModel = stockOverviewDisplayApi.GetStockOverviewDisplay(stock);
+
+
+            return View(stockDisplayModel);
+        }
+
         public IActionResult News(string stock)
         {
             var newsApi = new NewsApi();

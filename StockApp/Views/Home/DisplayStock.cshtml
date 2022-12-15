@@ -1,18 +1,127 @@
-﻿
-Ticker - Full name
-price
+﻿@model StockDisplayModel
+
+<div id="symbol">@Model.Symbol</div>  
+<div id="name">@Model.Name</div>
+price <br/>
 change dollar (change pct)
 
-buy/ sell
+<table id="buttonTable">
+                    <td scope="row"><button type="button" class="btn btn-success">Buy</button></td>
+                    <td><button type="button" class="btn btn-danger">Sell</button></td>
+  
+</table>
+
+
+
 
 <br/>
+         
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+</body>
+
+
+
+
+
+
 
 chart
+<br/>
+<br/>
 
 <div>Stats</div>
 
+<table class="statsTable">
+                <tr>
+                    <th>Open</th>
+                    <td>m</td>
+                    <th>PE Ratio</th>
+                    <td>@Model.PERatio</td>
+                </tr>
+                <tr>
+                    <th>High</th>
+                    <td>m</td>
+                    <th>Shares Outstanding</th>
+                    <td>@Model.SharesOutstanding</td>
+                </tr>
+                <tr>
+                    <th>Low</th>
+                    <td>m</td>
+                    <th>Market Cap</th>
+                    <td>@Model.MarketCapitalization</td>
+        }
+    }
+                </tr>
+                 <tr>
+                    <th>52 Week High</th>
+                    <td>@Model._52WeekHigh</td>
+                    <th>Book Value</th>
+                    <td>@Model.BookValue</td>
+                </tr>
+                <tr>
+                    <th>52 Week Low</th>
+                    <td>@Model._52WeekLow</td>
+                    <th>Dividend Yield</th>
+                    <td>@Model.DividendYield</td>
+                </tr> 
+</table>
+
+<br/>
+
+
 <div>About</div>
+<div class="description"><p>@Model.Description</p></div>
+
+<table class="infoTable">
+                <tr>
+                    <th>Industry</th>
+                    <td>@Model.Industry</td>
+                </tr>
+                <tr>
+                    <th>Sector</th>
+                    <td>@Model.Sector</td>
+                </tr>
+                <tr>
+                    <th>Exchange</th>
+                    <td>@Model.Exchange</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>@Model.Address</td>
+                </tr>
+</table>
+
+
 
 info
 
-<div>News</div>
