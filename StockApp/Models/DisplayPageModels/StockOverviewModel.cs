@@ -1,7 +1,6 @@
-﻿namespace StockApp.Data.ApiResults
+﻿namespace StockApp.Models.DisplayPageModels
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-    public class StockOverviewResults
+    public class StockOverviewModel
     {
         public string Symbol { get; set; }
         public string AssetType { get; set; }
@@ -49,7 +48,7 @@
         public string SharesOutstanding { get; set; }
         public string DividendDate { get; set; }
         public string ExDividendDate { get; set; }
+
+
     }
 }
-        
-   

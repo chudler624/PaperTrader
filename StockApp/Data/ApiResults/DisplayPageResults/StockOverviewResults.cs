@@ -1,6 +1,7 @@
-﻿namespace StockApp.Models
+﻿namespace StockApp.Data.ApiResults.DisplayPageResults
 {
-    public class StockDisplayModel
+    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+    public class StockOverviewResults
     {
         public string Symbol { get; set; }
         public string AssetType { get; set; }
@@ -40,15 +41,15 @@
         public string PriceToBookRatio { get; set; }
         public string EVToRevenue { get; set; }
         public string EVToEBITDA { get; set; }
-        public string Beta { get; set; }               
-        public string _52WeekHigh { get; set; }        
-        public string _52WeekLow { get; set; }       
-        public string _50DayMovingAverage { get; set; }        
+        public string Beta { get; set; }
+        public string _52WeekHigh { get; set; }
+        public string _52WeekLow { get; set; }
+        public string _50DayMovingAverage { get; set; }
         public string _200DayMovingAverage { get; set; }
         public string SharesOutstanding { get; set; }
         public string DividendDate { get; set; }
         public string ExDividendDate { get; set; }
-
-
     }
 }
+
+

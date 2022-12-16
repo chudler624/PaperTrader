@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
-using StockApp.Data.ApiResults;
-using StockApp.Models;
+using StockApp.Data.ApiResults.DisplayPageResults;
+using StockApp.Models.DisplayPageModels;
 
 namespace StockApp.Data.ApiLogic
 {
     public class StockOverviewDisplayApi
     {
-
-        public StockDisplayModel GetStockOverviewDisplay(string stock)
+        public StockOverviewModel GetStockOverviewDisplay(string stock)
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -15,10 +14,10 @@ namespace StockApp.Data.ApiLogic
                 Method = HttpMethod.Get,
                 RequestUri = new Uri($"https://www.alphavantage.co/query?function=OVERVIEW&symbol=TSLA&apikey=fe96c29976msh7164fa7f072bef1p19efc6jsn0ad83cbe2bb2"),
                 Headers =
-                    {
+                {
                         { "X-RapidAPI-Key", "fe96c29976msh7164fa7f072bef1p19efc6jsn0ad83cbe2bb2" },
                         { "X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com" },
-                    },
+                },
             };
 
             using (var response = client.SendAsync(request).Result)
@@ -28,7 +27,7 @@ namespace StockApp.Data.ApiLogic
 
                 var display = JsonConvert.DeserializeObject<StockOverviewResults>(body);
 
-                var stockDisplayModel = new StockDisplayModel();
+                var stockDisplayModel = new StockOverviewModel();
 
                 stockDisplayModel.Symbol = display.Symbol;
                 stockDisplayModel.AssetType = display.AssetType;
@@ -62,6 +61,46 @@ namespace StockApp.Data.ApiLogic
 
         }
 
+        public QuoteModel GetQuote(string stock)
+        {
+            var client = new HttpClient();
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri("https://alpha-vantage.p.rapidapi.com/query?function=GLOBAL_QUOTE&symbol=TSLA&datatype=json"),
+                Headers =
+                {
+                    { "X-RapidAPI-Key", "fe96c29976msh7164fa7f072bef1p19efc6jsn0ad83cbe2bb2" },
+                    { "X-RapidAPI-Host", "alpha-vantage.p.rapidapi.com" },
+                },
+            };
 
+            using (var response = client.SendAsync(request).Result)
+            {
+                response.EnsureSuccessStatusCode();
+                var body =  response.Content.ReadAsStringAsync().Result;
+
+                var quote = JsonConvert.DeserializeObject<GlobalQuote>(body);
+
+                var quoteModel = new QuoteModel();
+
+                quoteModel.Symbol = quote._01symbol;
+                quoteModel.Open = quote._02open;
+                quoteModel.High = quote._03high;
+                quoteModel.Low = quote._04low;
+                quoteModel.Price = quote._05price;
+                quoteModel.Volume = quote._06volume;
+                quoteModel.LatestTradingDay = quote._07latesttradingday;
+                quoteModel.PreviousClose = quote._08previousclose;
+                quoteModel.Change = quote._09change;
+                quoteModel.ChangePercent = quote._10changepercent;
+
+
+                return quoteModel;
+            }
+        }
     }
 }
+
+
+

@@ -1,14 +1,113 @@
-﻿
+﻿<!-- Include the Chart.js library in your HTML file -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+<body>
+<!-- Create a container element for the chart -->
+<div id="myNewChart">
+  <canvas id="myNewChart"></canvas>
+</div>
+
+
+<script>
+  // Set up the chart data
+new chart("myNewChart", {
+    type: "line"
+    data = {
+        labels: xValues,
+        datasets:
+            fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: yValues
+    }]
+  },
+
+      "2022-12-15 19:05:00",
+      "2022-12-15 16:45:00",
+      "2022-12-15 16:20:00",
+      "2022-12-15 16:10:00",
+      "2022-12-15 16:05:00",
+      "2022-12-15 16:00:00",
+      "2022-12-15 15:55:00",
+      "2022-12-15 15:50:00",
+      "2022-12-15 15:45:00",
+      "2022-12-15 15:40:00",
+      "2022-12-15 15:35:00"
+    ],
+    datasets: [
+      {
+        label: "Open",
+        data: [
+          "142.3100",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.1850",
+          "141.8800",
+          "141.7500",
+          "142.1400",
+          "142.5450",
+          "142.7100"
+        ],
+        borderColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        fill: false
+      },
+      {
+        label: "High",
+        data: [
+          "142.3100",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.3700",
+          "142.2200",
+          "142.0400",
+          "142.1600",
+          "142.5800",
+          "142.7200"
+        ],
+        borderColor: "rgba(255, 206, 86, 0.2)",
+        backgroundColor: "rgba(255, 206, 86, 0.2)",
+        fill: false
+      },
+      {
+        label: "Low",
+        data: [
+          "142.3100",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.3600",
+          "142.0050",
+          "141.8800",
+          "141.7500",
+          "141.7650",
+          "142.1129",
+          "142.3800"
+        ],
+        borderColor: "rgba(54, 162, 235, 0.2)",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        fill: false
+      },
+      {
+</Script>
+</body>
+
+
 
 <div>Search</div>
 
 <div class="row">
-              <form asp-controller="Search" asp-action="DisplayStock">
-            <div id="searchbar" class="input-group mb-3">
-                  <input type="text" name="stock" class="form-control" placeholder="Search Stocks">
-                  <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
-            </div>
-            </form>
+    <form asp-controller="Home" asp-action="DisplayStock">
+        <div id="searchbar" class="input-group mb-3">
+            <input type="text" name="stock" class="form-control" placeholder="Search Stocks">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+        </div>
+    </form>
 
-              
-      </div>
+
+</div>

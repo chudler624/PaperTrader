@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StockApp.Data.ApiLogic;
 using StockApp.Models;
+using StockApp.Models.DisplayPageModels;
 using System.Diagnostics;
 
 namespace StockApp.Controllers
@@ -32,10 +33,13 @@ namespace StockApp.Controllers
         public IActionResult DisplayStock(string stock)
         {
             var stockOverviewDisplayApi = new StockOverviewDisplayApi();
-            var stockDisplayModel = stockOverviewDisplayApi.GetStockOverviewDisplay(stock);
+            DisplayMasterModel myModel = new DisplayMasterModel();
 
+            myModel.QuoteModel = stockOverviewDisplayApi.GetQuote(stock);
+            myModel.StockOverviewModel = stockOverviewDisplayApi.GetStockOverviewDisplay(stock);
+           
 
-            return View(stockDisplayModel);
+            return View(myModel);
         }
 
         public IActionResult News(string stock)

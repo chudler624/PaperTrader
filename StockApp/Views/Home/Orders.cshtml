@@ -1,3 +1,105 @@
 ﻿<div>Orders</div>
 <br/>
+
+<!-- Include the Chart.js library in your HTML file -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+<!-- Create a container element for the chart -->
+<div id="myChartContainer">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  // Set up the chart data
+  var data = {
+    labels: [
+      "Day 1",
+      "Day 2",
+      "Day 3",
+      "Day 4",
+      "Day 5"
+    ],
+    datasets: [
+      {
+        label: "Open",
+        data: [
+          "555.3100",
+          "550.3600",
+          "565.3600",
+          "580.3600",
+          "590.1850"
+        ],
+        borderColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        fill: false
+      },
+      {
+        label: "High",
+        data: [
+          "575.3100",
+          "570.3600",
+          "585.3600",
+          "590.3600",
+          "595.3700"
+        ],
+        borderColor: "rgba(255, 206, 86, 0.2)",
+        backgroundColor: "rgba(255, 206, 86, 0.2)",
+        fill: false
+      },
+      {
+        label: "Low",
+        data: [
+          "530.3100",
+          "540.3600",
+          "550.3600",
+          "560.3600",
+          "570.0050"
+        ],
+        borderColor: "rgba(54, 162, 235, 0.2)",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        fill: false
+      },
+      {
+        label: "Close",
+        data: [
+          "560.3100",
+          "550.3600",
+          "570.3600",
+          "580.3600",
+          "590.0050"
+        ],
+        borderColor: "rgba(153, 102, 255, 0.2)",
+        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        fill: false
+      }
+    ]
+  };
+
+  // Set up the chart options
+  var options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            callback: function(value, index, values) {
+              return '$' + value;
+            }
+          }
+        }
+      ]
+    }
+  };
+
+  // Get the context of the canvas element we want to select
+  var ctx = document.getElementById("myChart").getContext("2d");
+
+  // Create a new chart using the chart options and data
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: data,
+    options: options
+  });
+</script>
+``
+
 ticker buy/sell P/L cash

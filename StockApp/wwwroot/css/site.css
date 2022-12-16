@@ -17,6 +17,15 @@ body {
   margin-bottom: 60px;
 }
 
+/*home*/
+
+#myWealthChart{
+    margin: auto;
+}
+
+
+
+
 /*news page*/
 
 h1{
@@ -95,6 +104,10 @@ h1{
     text-align:center;
 }
 
+#stockDisplayChart{
+    margin:auto;
+}
+
 .description{
     font-size:12px;
     font-family:'Times New Roman';
@@ -137,4 +150,16 @@ h1{
     width: 50%;
     text-align: left;
     border-bottom: 1px solid black;
+}
+
+#myChart{
+    height:50%;
+    width: 50%;
+    margin:auto;
+}
+
+#myChartContainer {
+    height: 50%;
+    width: 50%;
+    margin: auto;
 }
