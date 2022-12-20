@@ -163,3 +163,29 @@ h1{
     width: 50%;
     margin: auto;
 }
+
+/*Tips Page*/
+
+h2{
+   margin: 0 12.5% 0 12.5%;
+}
+
+h3{
+   margin: 0 12.5% 0 12.5%;
+}
+
+h4{
+   margin: 0 12.5% 0 12.5%;
+}
+
+.opt{
+    margin: 0 12.5% 0 12.5%;
+}
+
+.option{
+    margin: 0 12.5% 0 12.5%;
+}
+
+/*#option{
+    text-align:center;
+}*/

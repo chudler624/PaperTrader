@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace StockApp.Controllers
+namespace StockApp.Data.ApiLogic
 {
-    public class SearchController : Controller
+    public class SearchApi
     {
         // C# code
         public class MyController : Controller

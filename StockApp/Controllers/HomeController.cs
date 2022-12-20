@@ -56,6 +56,19 @@ namespace StockApp.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult GetSuggestions(string term)
+        {
+            // Search your database or other data source for suggestions that match the user's input
+            var suggestions = new List<KeyValuePair<string, string>>();
+            suggestions.Add(new KeyValuePair<string, string>("Tesla", "TSLA"));
+            suggestions.Add(new KeyValuePair<string, string>("IBM", "IBM"));
+            suggestions.Add(new KeyValuePair<string, string>("Apple", "AAPL"));
+            // Return the list of suggestions as a JSON object
+            return Json(suggestions);
+
+        }
+
         public IActionResult Privacy()
         {
             return View();
